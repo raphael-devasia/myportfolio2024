@@ -260,3 +260,48 @@
   new PureCounter();
 })();
 
+function validate() {
+  let name = document.getElementById("name");
+  let email = document.getElementById("email");
+  let subject = document.getElementById("subject");
+  let message = document.getElementById("message");
+  let form = document.getElementById("form");
+  var validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var valid = true;
+  // name validation
+
+  if (name.value.trim() == "") {
+    alert("enter name");
+    
+    valid = false;
+  } else {
+    name.innerHTML = "";
+  }
+  // email validation
+
+  if (!validRegex.test(email.value) == "") {
+    alert("Enter an email")
+    valid = false;
+  } else {
+    email.innerHTML = "";
+  }
+  // subject validation
+
+  if (subject.value.trim() == "") {
+    alert("Enter a subject");
+    valid = false;
+  } else {
+    subject.innerHTML = "";
+  }
+  // subject validation
+
+  if (message.value.trim() == "") {
+    alert("Enter a message");
+    valid = false;
+  } else {
+    message.innerHTML = "";
+  }
+  console.log(valid)
+  return valid;
+}
